@@ -1,0 +1,15 @@
+.banner {
+  background-image: url(../Assets/Images/backgroundAbout.png);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  height: 220px;
+  margin: 0 auto;
+  border-radius: 25px;
+  color: white;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}

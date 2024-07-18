@@ -1,45 +1,46 @@
-/* HEADER */
-
-header {
+@mixin HeaderFooterFont {
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 500;
     font-size: 24px;
+}
+
+
+/* HEADER */
+
+header {
+    @include HeaderFooterFont;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     justify-content: space-between;
     padding: 0px;
     margin: 20px 50px;
-    
-}
 
-header ul {
-    display: flex;
-    align-items: flex-end;
-    text-align: right;
-    gap: 57px;
-    list-style: none;
-    cursor: pointer;
-}
+    ul {
+        display: flex;
+        align-items: flex-end;
+        text-align: right;
+        gap: 57px;
+        list-style: none;
+        cursor: pointer;
+        margin-right: 50px;
+        }
 
-header a {
-    text-decoration: none;
-    list-style: none;
-    color: inherit;
-}
+    a {
+        text-decoration: none;
+        color: inherit;
 
-header li:hover {
-    text-decoration-line: underline;
+        &:hover {
+            text-decoration-line: underline;
+        }
+    }
 }
 
 /* FOOTER */
 
 footer {
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 24px;
+    @include HeaderFooterFont;
     display: flex;
     flex-direction: column;
     gap: 40px;
@@ -48,8 +49,8 @@ footer {
     color: #FFFFFF;
     background-color: black;
     height: 200px;
-}
 
-.logo_footer {
-    height: 20%;
+    .logo_footer {
+        height: 20%;
+    }
 }
