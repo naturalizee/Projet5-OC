@@ -30,10 +30,10 @@ function AboutList() {
     };
 
     return (
-        <div>
+        <div className="collapse">
             {items.map((item, index) => (
                 <div key={index}>
-                    <h2 onClick={() => handleClick(index)} style={{ cursor: 'pointer' }}>
+                    <h2 onClick={() => handleClick(index)}>
                         {item.title}
                     </h2>
                     {visibleIndexes[index] && <p>{item.content}</p>}
