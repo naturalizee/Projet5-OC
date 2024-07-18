@@ -33,10 +33,13 @@ function AboutList() {
         <div className="collapse">
             {items.map((item, index) => (
                 <div key={index}>
-                    <h2 onClick={() => handleClick(index)}>
+                    <div class="collapseTitle">
+                    <h2>
                         {item.title}
                     </h2>
-                    {visibleIndexes[index] && <p>{item.content}</p>}
+                    <i className={`fa-solid fa-chevron-up chevron ${visibleIndexes[index] ? 'rotate' : ''}`} onClick={() => handleClick(index)}></i>
+                    </div>
+                    <p className={visibleIndexes[index] ? 'visible' : ''}>{item.content}</p>
                 </div>
             ))}
         </div>

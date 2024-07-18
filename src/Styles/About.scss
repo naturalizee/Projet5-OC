@@ -2,7 +2,7 @@
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 500;
-  font-size: 24px;
+  font-size: 1.5rem;
 }
 
 .banner {
@@ -34,22 +34,51 @@
 }
 
 .collapse {
-  h2 {
-    cursor: pointer;
-    background-color: #ff6060;
+  width: 80%;
+  margin: 30px auto;
+  @include AboutText();
+
+  .collapseTitle {
+    display: flex;
+    align-items: center;
     color: white;
-    width: 80%;
-    margin: 30px auto;
+    background-color: #ff6060;
     border-radius: 5px;
-    padding: 15px;
-    @include AboutText();
+    margin: 30px;
+
+    h2 {
+      display: flex;
+      width: 100%;
+      padding: 0 20px;
+      @include AboutText();
+    }
+
+    i {
+      padding: 20px;
+    }
+  }
+
+  .chevron {
+    cursor: pointer;
+    transition: transform 0.5s;
+  }
+
+  .chevron.rotate {
+    transform: rotate(180deg);
   }
 
   p {
-    width: 80%;
-    margin: 30px auto;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.5s ease, padding 0.5s ease;
+    margin: 0 30px;
+    padding: 0 20px;
+    font-size: 1.1rem;
+  }
+
+  .visible {
+    height: auto;
     padding-bottom: 15px;
-    @include AboutText();
-    font-size: 1.2rem;
+    margin: 30px;
   }
 }
