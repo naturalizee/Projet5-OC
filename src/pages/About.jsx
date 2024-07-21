@@ -33,7 +33,7 @@ function AboutList() {
         <div className="collapse">
             {items.map((item, index) => (
                 <div key={index}>
-                    <div class="collapseTitle">
+                    <div className="collapseTitle">
                     <h2>
                         {item.title}
                     </h2>

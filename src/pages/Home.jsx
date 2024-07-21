@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { LayoutHeader, LayoutFooter } from '../Components/Layout';
+import { Link } from 'react-router-dom'
 import "../Styles/home.scss";
 
 export function Home() {
@@ -28,10 +29,10 @@ function Gallery() {
   return (
     <div className="gallery">
       {houses.map((house) => (
-          <div key={house.id} className="cardItem">
-            <img src={house.cover} alt={house.title} />
-            <div className="titleCard">{house.title} </div>
-        </div>
+        <Link to={`/flat/${house.id}`} key={house.id} className="cardItem">
+          <img src={house.cover} alt={house.title} />
+          <div className="titleCard">{house.title} </div>
+        </Link>
       ))}
     </div>
   );

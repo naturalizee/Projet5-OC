@@ -5,10 +5,10 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import "./Styles/index.css";
-import {About} from './pages/About';
-import {ErrorPage} from './pages/ErrorPage';
-import {Home} from './pages/Home';
-import {HouseCard} from './pages/HouseCard';
+import { About } from './pages/About';
+import { ErrorPage } from './pages/ErrorPage';
+import { Home } from './pages/Home';
+import { HouseCard } from './pages/HouseCard';
 
 const router = createBrowserRouter([
   {
@@ -31,6 +31,10 @@ const router = createBrowserRouter([
     path: "*",
     element: <ErrorPage />,
   },
+  {
+    path: "/flat/:id",
+    element: <HouseCard />,
+  }
 ]);
 
 
