@@ -1,49 +1,89 @@
 import React, { useState, useEffect } from 'react'
 import { LayoutHeader, LayoutFooter } from '../Components/Layout';
 import { useParams } from 'react-router-dom'
+import "../Styles/HouseCard.scss"
 
-export function HouseCard () {
-    return (
-        <div>
-            <LayoutHeader/>
-            <HouseDetails />
-            <LayoutFooter />
-        </div>
-    )
+
+/* PRINCIPAL FUNCTION */
+export function HouseCard() {
+  return (
+    <div>
+      <LayoutHeader />
+      <HouseDetails />
+      <LayoutFooter />
+    </div>
+  )
 }
 
+/* FUNCTION FOR DETAILS DISPLAY */
 function HouseDetails() {
-    const { id } = useParams();
-    const [house, setHouse] = useState(null);
-  
-    useEffect(() => {
-      fetch('/logements.json')
-        .then(response => response.json())
-        .then(data => {
-          const foundHouse = data.items.find(h => h.id === id);
-          setHouse(foundHouse);
-        })
-        .catch(error => console.log('Error fetching data:', error));
-    }, [id]);
-  
-    if (!house) {
-      return <div>Loading...</div>;
-    }
+  const { id } = useParams();
+  const [house, setHouse] = useState(null);
 
-    return (
-        <div className="house-details">
-          <img src={house.pictures} alt={house.title} />
-          <h2>{house.title}</h2>
-          <p>{house.host.name}</p>
-          <img src={house.host.picture} alt={house.host.name} /> 
-          <p>{house.location}</p>
-          <ul>
-            <li>{house.tags}</li>
-          </ul>
-          <RatingStar />
-          
-        </div>
-      );
-    }
+  useEffect(() => {
+    fetch('/logements.json')
+      .then(response => response.json())
+      .then(data => {
+        const foundHouse = data.items.find(h => h.id === id);
+        setHouse(foundHouse);
+      })
+      .catch(error => console.log('Error fetching data:', error));
+  }, [id]);
 
-    function RatingStar () {}
+  if (!house) {
+    return <div>Loading...</div>;
+  }
+
+  return (
+    <div className="house-details">
+      <Slideshow pictures={house.pictures} />
+      <h2>{house.title}</h2>
+      <p>{house.host.name} <img src={house.host.picture} alt={house.host.name}></img></p>
+      <p>{house.location}</p>
+      <DisplayTags tags={house.tags} />
+      <RatingStar rating={house.rating} />
+
+    </div>
+  );
+}
+
+/* DISPLAY FOR DISPLAYING GALLERY */
+function Slideshow({ pictures }) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const nextSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % pictures.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + pictures.length) % pictures.length);
+  };
+
+  return (
+    <div className="carousel">
+      <button className="fa-solid fa-chevron-left prev" onClick={prevSlide}></button>
+      <img src={pictures[currentIndex]} alt={`slide ${currentIndex}`} className="carousel-image" />
+      <button className="fa-solid fa-chevron-right next" onClick={nextSlide}></button>
+    </div>
+  );
+}
+
+/* FUNCTION FOR DISPLAYING TAGS */
+function DisplayTags({ tags }) {
+  return (
+    <div className="tags">
+      {tags.map((tag, index) => (
+        <span key={index} className="tag">{tag}</span>
+      ))}
+    </div>
+  );
+}
+
+/* FUNCTION FOR DISPLAYING RATING STARS */
+function RatingStar({ rating }) {
+  const stars = Array.from({ length: 5 }, (_, index) => (
+    <span key={index} className={index < rating ? 'fa-solid fa-star' : 'fa-regular fa-star'}></span>
+  ));
+
+  return <div className="ratingStar">{stars}</div>;
+}

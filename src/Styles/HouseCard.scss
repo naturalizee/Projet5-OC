@@ -1,0 +1,68 @@
+/* CAROUSEL STYLES */
+.carousel {
+    position: relative;
+    max-width: 90%;
+    margin: auto;
+    overflow: hidden;
+    height: 30%;
+
+    img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        object-fit: cover;
+
+    }
+
+    .prev,
+    .next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        color: red;
+        background-color: none;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        font-size: 10rem;
+    }
+
+
+    .prev {
+        left: 10px;
+    }
+
+    .next {
+        right: 10px;
+    }
+}
+
+/* Example styles for tags and rating stars */
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.tag {
+    background-color: #ff6060;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.rating {
+    display: flex;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.star {
+    font-size: 20px;
+    color: grey;
+}
+
+.star.filled {
+    color: gold;
+}
