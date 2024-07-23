@@ -37,17 +37,18 @@ function HouseDetails() {
   return (
     <div className="house-details">
       <Slideshow pictures={house.pictures} />
-      <h2>{house.title}</h2>
-      <p>{house.host.name} <img src={house.host.picture} alt={house.host.name}></img></p>
-      <p>{house.location}</p>
+      <div className="house-principals-infos">
+        <h2>{house.title}</h2>
+        <p>{house.host.name} <img src={house.host.picture} alt={house.host.name}></img></p>
+        </div>
+        <p>{house.location}</p>
       <DisplayTags tags={house.tags} />
       <RatingStar rating={house.rating} />
-
     </div>
   );
 }
 
-/* DISPLAY FOR DISPLAYING GALLERY */
+/* SUB FUNCTION FOR DISPLAYING GALLERY */
 function Slideshow({ pictures }) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -68,7 +69,7 @@ function Slideshow({ pictures }) {
   );
 }
 
-/* FUNCTION FOR DISPLAYING TAGS */
+/* SUB FUNCTION FOR DISPLAYING TAGS */
 function DisplayTags({ tags }) {
   return (
     <div className="tags">
@@ -79,7 +80,7 @@ function DisplayTags({ tags }) {
   );
 }
 
-/* FUNCTION FOR DISPLAYING RATING STARS */
+/* SUB FUNCTION FOR DISPLAYING RATING STARS */
 function RatingStar({ rating }) {
   const stars = Array.from({ length: 5 }, (_, index) => (
     <span key={index} className={index < rating ? 'fa-solid fa-star' : 'fa-regular fa-star'}></span>

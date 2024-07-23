@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 export function LayoutHeader() {
     return (
         <header>
-            <img className="logo_header" src={logoHeader} alt="logo_header" />
+           <a href="/"><img className="logo_header" src={logoHeader} alt="logo_header" /></a>
             <nav>
                 <ul>
                     <li><Link to="/">Accueil</Link></li>
@@ -21,7 +21,7 @@ export function LayoutHeader() {
 export function LayoutFooter() {
     return (
         <footer>
-            <img className="logo_footer" src={logoFooter} alt="logo_footer" />
+            <a href="/"><img className="logo_footer" src={logoFooter} alt="logo_footer" /></a>
             <aside>© 2020 Kasa. All rights reserved</aside>
         </footer>
     );
