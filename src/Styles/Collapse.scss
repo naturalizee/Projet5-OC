@@ -32,7 +32,11 @@
       .visible {
         height: auto;
         padding-bottom: 15px;
-        margin: 30px;
+        margin: 0;
+
+        li {
+          list-style: none;
+        }
       }
     }
   }

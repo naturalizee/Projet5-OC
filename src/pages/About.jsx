@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { LayoutHeader, LayoutFooter } from '../Components/Layout';
-import Collapse from "../Components/Collapse"
-import("../Styles/About.scss");
+import Collapse from "../Components/Collapse";
+import "../Styles/About.scss";
 
 export function About() {
     return <div>

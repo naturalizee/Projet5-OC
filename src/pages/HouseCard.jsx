@@ -30,7 +30,7 @@ function HouseDetails() {
         setHouse(foundHouse);
       })
       .catch(error => console.log('Error fetching data:', error));
-  }, [id]);
+  }, [id]); 
 
   if (!house) {
     return <div>Loading...</div>;
@@ -55,9 +55,13 @@ function HouseDetails() {
           </div>
         </div>
         <div className='collapse'>
-          <Collapse title="Description" content={house.description} />
-          <Collapse title="Equipements" content={house.equipments.join(", ")} />
-        </div>
+  <Collapse title="Description" content={house.description} />
+  <Collapse 
+    title="Equipements" 
+    content={<ul>{house.equipments.map((item, index) => <li key={index}>{item}</li>)}</ul>} 
+  />
+</div>
+
       </div>
     </div>
   );
