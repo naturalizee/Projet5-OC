@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { LayoutHeader, LayoutFooter } from '../Components/Layout';
+import Collapse from "../Components/Collapse"
 import("../Styles/About.scss");
 
 export function About() {
@@ -22,8 +23,8 @@ function AboutList() {
     const [visibleIndexes, setVisibleIndexes] = useState(Array(items.length).fill(false));
 
     const handleClick = (index) => {
-        setVisibleIndexes((prevVisibleIndexes) => 
-            prevVisibleIndexes.map((visible, i) => 
+        setVisibleIndexes((prevVisibleIndexes) =>
+            prevVisibleIndexes.map((visible, i) =>
                 i === index ? !visible : visible
             )
         );
@@ -32,15 +33,7 @@ function AboutList() {
     return (
         <div className="collapse">
             {items.map((item, index) => (
-                <div key={index}>
-                    <div className="collapseTitle">
-                    <h2>
-                        {item.title}
-                    </h2>
-                    <i className={`fa-solid fa-chevron-up chevron ${visibleIndexes[index] ? 'rotate' : ''}`} onClick={() => handleClick(index)}></i>
-                    </div>
-                    <p className={visibleIndexes[index] ? 'visible' : ''}>{item.content}</p>
-                </div>
+                <Collapse key={index} title={item.title} content={item.content} />
             ))}
         </div>
     );

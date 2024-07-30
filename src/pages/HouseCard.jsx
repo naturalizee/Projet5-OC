@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { LayoutHeader, LayoutFooter } from '../Components/Layout';
 import { useParams } from 'react-router-dom'
+import Collapse from "../Components/Collapse"
 import "../Styles/HouseCard.scss"
+import "../Styles/Collapse.scss"
 
 
 /* PRINCIPAL FUNCTION */
@@ -35,15 +37,28 @@ function HouseDetails() {
   }
 
   return (
-    <div className="house-details">
+    <div>
       <Slideshow pictures={house.pictures} />
-      <div className="house-principals-infos">
-        <h2>{house.title}</h2>
-        <p>{house.host.name} <img src={house.host.picture} alt={house.host.name}></img></p>
+      <div className="house-details">
+        <div className='firstSection'>
+          <div className="house-principals-infos">
+            <h2>{house.title}</h2>
+            <p>{house.location}</p>
+            <DisplayTags tags={house.tags} />
+          </div>
+          <div className='hostAndRating'>
+            <div className='host'>
+              <p>{house.host.name}</p>
+              <img className="hostPicture" src={house.host.picture} alt={house.host.name}></img>
+            </div>
+            <RatingStar rating={house.rating} />
+          </div>
         </div>
-        <p>{house.location}</p>
-      <DisplayTags tags={house.tags} />
-      <RatingStar rating={house.rating} />
+        <div className='collapse'>
+          <Collapse title="Description" content={house.description} />
+          <Collapse title="Equipements" content={house.equipments.join(", ")} />
+        </div>
+      </div>
     </div>
   );
 }

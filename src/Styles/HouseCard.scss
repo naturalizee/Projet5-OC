@@ -1,90 +1,145 @@
-
+@mixin AboutText {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+}
 
 /* CAROUSEL STYLES */
 
 .carousel {
-    position: relative;
-    overflow: hidden;
-    height: 30%;
+  position: relative;
+  overflow: hidden;
+  height: 30%;
 
-    img {
-        width: 100%;
-        border-radius: 10px;
-        object-fit: cover;
-        max-height: 700px;
-        height: 700px;
+  img {
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+    max-height: 700px;
+    height: 700px;
+  }
 
-    }
-
-    .prev,
-    .next {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        color: white;
-        background: none;
-        border: none;
-        padding: 10px;
-        cursor: pointer;
-        font-size: 10rem;
-    }
+  .prev,
+  .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    background: none;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 10rem;
+  }
 
 
-    .prev {
-        left: 10px;
-    }
+  .prev {
+    left: 10px;
+  }
 
-    .next {
-        right: 10px;
-    }
+  .next {
+    right: 10px;
+  }
 }
 
 /* TEXT HOUSE STYLES */
 
 .house-details {
+  width: 90%;
+  margin: auto;
+
+  .firstSection {
+    display: flex;
+    justify-content: space-between;
 
     .house-principals-infos {
+
+      h2 {
+        @include AboutText;
+        font-size: 36px;
         display: flex;
-        justify-content: space-between;
+        align-items: flex-end;
+        color: #FF6060;
+      }
 
-        h2 {
-            font-family: 'Montserrat';
-            font-style: normal;
-            font-weight: 500;
-            font-size: 36px;
-            display: flex;
-            align-items: flex-end;
-            color: #FF6060;
+      .tags {
+        display: flex;
+        align-items: center;
+        margin-top: 10px;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 10px;
+
+        .tag {
+          background-color: #FF6060;
+          color: white;
+          padding: 5px 10px;
+          border-radius: 10px;
         }
+      }
     }
-}
+  }
 
-/* Example styles for tags and rating stars */
-.tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 10px;
-}
+  .hostAndRating {
 
-.tag {
-    background-color: #ff6060;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 5px;
-}
+    .host {
+      display: flex;
+      color: #FF6060;
+      gap: 30px;
+      width: 10px;
 
-.rating {
+      .hostPicture {
+        border-radius: 50%;
+        width: 64px;
+        height: 64px;
+      }
+    }
+  }
+
+
+  /* RATING AND STARS IN COMPONENT RatingStar */
+
+  .rating {
     display: flex;
     gap: 5px;
     margin-top: 10px;
-}
+  }
 
-.star {
+  .star {
     font-size: 20px;
     color: grey;
+  }
+
+  .star.filled {
+    color: gold;
+  }
+
+  .ratingStar {
+    display: flex;
+    gap: 5px;
+    margin-top: 10px;
+
+    .fa-solid.fa-star {
+      color: #FF6060;
+    }
+
+    .fa-regular.fa-star {
+      color: #E3E3E3;
+    }
+  }
 }
 
-.star.filled {
-    color: gold;
+@media (max-width: 768px) {
+  .flatInformation {
+    .firstSection {
+      display: block;
+    }
+
+    .hostAndRating {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
 }

@@ -17,19 +17,15 @@ header {
     padding: 0px;
     margin: 20px 50px;
 
-    ul {
-        display: flex;
-        align-items: flex-end;
-        text-align: right;
-        gap: 57px;
-        list-style: none;
-        cursor: pointer;
-        margin-right: 50px;
-        }
-
-    a {
+    nav a {
         text-decoration: none;
         color: inherit;
+        cursor: pointer;
+        margin-right: 50px;
+
+        &.active {
+            text-decoration: underline;
+        }
 
         &:hover {
             text-decoration-line: underline;
