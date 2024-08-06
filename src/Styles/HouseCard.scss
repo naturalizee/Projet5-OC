@@ -10,11 +10,13 @@
   position: relative;
   overflow: hidden;
   height: 30%;
-  
+  width: 85%;
+  margin: auto;
+
 
   img {
     width: 100%;
-    border-radius: 10px;
+    border-radius: 25px;
     object-fit: cover;
     max-height: 700px;
     height: 700px;
@@ -30,7 +32,7 @@
     border: none;
     padding: 10px;
     cursor: pointer;
-    font-size: 10rem;
+    font-size: 5rem;
   }
 
 
@@ -43,15 +45,46 @@
   }
 }
 
+/* PICTURE COUNT */
+
+.picture-count {
+  position: absolute;
+  bottom: 50px;
+  right: 50%;
+  color: red;
+  display: flex;
+  justify-content: center;
+}
+
+
+
 /* TEXT HOUSE STYLES */
 
 .house-details {
-  width: 90%;
+  width: 85%;
   margin: auto;
+  margin-top: 20px;
 
   .firstSection {
     display: flex;
     justify-content: space-between;
+
+    .hostAndRating {
+      width: 150px;
+
+      .host {
+        display: flex;
+        color: #FF6060;
+        gap: 30px;
+        width: 10px;
+
+        .hostPicture {
+          border-radius: 50%;
+          width: 64px;
+          height: 64px;
+        }
+      }
+    }
 
     .house-principals-infos {
 
@@ -81,21 +114,6 @@
     }
   }
 
-  .hostAndRating {
-
-    .host {
-      display: flex;
-      color: #FF6060;
-      gap: 30px;
-      width: 10px;
-
-      .hostPicture {
-        border-radius: 50%;
-        width: 64px;
-        height: 64px;
-      }
-    }
-  }
 
 
   /* RATING AND STARS IN COMPONENT RatingStar */
@@ -136,12 +154,6 @@
       display: block;
     }
 
-    .hostAndRating {
-      display: flex;
-      flex-direction: row-reverse;
-      justify-content: space-between;
-      align-items: center;
-    }
   }
 }
 
@@ -153,11 +165,29 @@
   gap: 50px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  
+
+  @media (max-width: 768px) {
+    display: block;
+  }
+
   .collapse-item {
     .collapseTitle {
-      width: 80%;
-      margin-left: 0;
+      display: flex;
+      align-items: center;
+      color: white;
+      background-color: #ff6060;
+      border-radius: 5px;
+      margin: 30px 0;
+
+      h2 {
+        width: 100%;
+        padding: 0 20px;
+        @include AboutText();
+      }
+
+      i {
+        padding: 20px;
+      }
     }
 
     .chevron {
@@ -181,7 +211,7 @@
     .visible {
       height: auto;
       padding-bottom: 15px;
-      margin: 0;
+      margin: 0px;
 
       li {
         list-style: none;
@@ -190,8 +220,9 @@
   }
 }
 
+
 @media (max-width: 768px) {
   .collapse {
-      display: block;
-    }
+    display: block;
   }
+}

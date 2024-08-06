@@ -15,13 +15,21 @@ header {
     align-items: flex-start;
     justify-content: space-between;
     padding: 0px;
-    margin: 20px 50px;
+    margin: 30px auto;
+    width: 85%;
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-self: center;
+        margin-right: 15px;
+    }
 
     nav a {
         text-decoration: none;
         color: inherit;
         cursor: pointer;
-        margin-right: 50px;
+        margin-left: 20px;
 
         &.active {
             text-decoration: underline;
