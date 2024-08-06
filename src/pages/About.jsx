@@ -31,7 +31,7 @@ function AboutList() {
     };
 
     return (
-        <div className="collapse">
+        <div className="collapseAbout">
             {items.map((item, index) => (
                 <Collapse key={index} title={item.title} content={item.content} />
             ))}

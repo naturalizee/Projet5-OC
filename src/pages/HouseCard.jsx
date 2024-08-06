@@ -3,7 +3,6 @@ import { LayoutHeader, LayoutFooter } from '../Components/Layout';
 import { useParams } from 'react-router-dom'
 import Collapse from "../Components/Collapse"
 import "../Styles/HouseCard.scss"
-import "../Styles/Collapse.scss"
 
 
 /* PRINCIPAL FUNCTION */
@@ -30,7 +29,7 @@ function HouseDetails() {
         setHouse(foundHouse);
       })
       .catch(error => console.log('Error fetching data:', error));
-  }, [id]); 
+  }, [id]);
 
   if (!house) {
     return <div>Loading...</div>;
@@ -55,12 +54,12 @@ function HouseDetails() {
           </div>
         </div>
         <div className='collapse'>
-  <Collapse title="Description" content={house.description} />
-  <Collapse 
-    title="Equipements" 
-    content={<ul>{house.equipments.map((item, index) => <li key={index}>{item}</li>)}</ul>} 
-  />
-</div>
+          <Collapse title="Description" content={house.description} />
+          <Collapse
+            title="Equipements"
+            content={<ul>{house.equipments.map((item, index) => <li key={index}>{item}</li>)}</ul>}
+          />
+        </div>
 
       </div>
     </div>

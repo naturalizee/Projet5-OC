@@ -33,7 +33,7 @@
   }
 }
 
-.collapse {
+.collapseAbout {
   width: 80%;
   margin: 30px auto;
   @include AboutText();
@@ -47,7 +47,6 @@
     margin: 30px;
 
     h2 {
-      display: flex;
       width: 100%;
       padding: 0 20px;
       @include AboutText();
