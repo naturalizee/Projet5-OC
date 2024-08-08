@@ -1,0 +1,56 @@
+@mixin AboutText {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+}
+
+.collapse {
+  width: 80%;
+  margin: 30px auto;
+  .collapse-item {
+    @include AboutText;
+    .collapseTitle {
+      display: flex;
+      align-items: center;
+      color: white;
+      background-color: #ff6060;
+      border-radius: 5px;
+      margin: 30px;
+
+      h2 {
+        width: 100%;
+        padding: 0 20px;
+        @include AboutText;
+      }
+
+      i {
+        padding: 20px;
+      }
+    }
+
+    .chevron {
+      cursor: pointer;
+      transition: transform 0.5s;
+    }
+
+    .chevron.rotate {
+      transform: rotate(180deg);
+    }
+
+    p {
+      height: 0;
+      overflow: hidden;
+      transition: height 0.5s ease, padding 0.5s ease;
+      margin: 0 30px;
+      padding: 0 20px;
+      font-size: 1.1rem;
+    }
+
+    .visible {
+      height: auto;
+      padding-bottom: 15px;
+      margin: 30px;
+    }
+  }
+}

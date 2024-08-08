@@ -1,0 +1,14 @@
+.card-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 40px;
+  width: calc(85% - 40px);
+  margin: 30px auto;
+  padding: 30px 20px;
+  border-radius: 20px;
+  background-color: #f6f6f6;
+
+  @media (max-width: 768px) {
+    display: block;
+  }
+}

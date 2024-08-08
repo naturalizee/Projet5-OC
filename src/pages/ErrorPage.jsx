@@ -1,18 +1,21 @@
-import React from 'react';
+import { Header, Footer } from "../Components/Layout";
 import { Link } from "react-router-dom";
-import { LayoutHeader, LayoutFooter } from '../Components/Layout';
-import "../Styles/ErrorPage.scss"
+import "../style/ErrorPage.scss";
 
 export function ErrorPage() {
-    return <div>
-        <LayoutHeader />
-        <div className="mainError">
-        <p className="numberError">404</p>
-        <p className="noPage">Oups! La page que vous demandez n'existe pas.</p>
-        <Link to="/" className="errorLink">
+  return (
+    <div>
+      <Header />
+      <div className="mainError">
+        <p className="mainError__numberError">404</p>
+        <p className="mainError__noPage">
+          Oups! La page que vous demandez n'existe pas.
+        </p>
+        <Link to="/" className="mainError__errorLink">
           Retourner sur la page d'accueil
         </Link>
       </div>
-        <LayoutFooter />
+      <Footer />
     </div>
+  );
 }

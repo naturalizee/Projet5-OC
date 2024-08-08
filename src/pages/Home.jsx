@@ -1,21 +1,20 @@
-import React, { useState, useEffect } from 'react';
-import { LayoutHeader, LayoutFooter } from '../Components/Layout';
-import { Link } from 'react-router-dom'
-import "../Styles/home.scss";
+import React, { useState, useEffect } from "react";
+import { Header, Footer } from "../Components/Layout.jsx";
+import "../style/Home.scss";
+import { CardContainer } from "../Components/CardContainer.jsx";
 
 export function Home() {
   return (
     <div>
-      <LayoutHeader />
+      <Header />
       <section className="promise">
-        <h1>Chez vous, partout et ailleurs</h1>
+        <h1 className="promise__h1">Chez vous, partout et ailleurs</h1>
       </section>
       <Gallery />
-      <LayoutFooter />
+      <Footer />
     </div>
   );
 }
-
 function Gallery() {
   const [houses, setHouses] = useState([]);
 
@@ -23,17 +22,11 @@ function Gallery() {
     fetch("/logements.json")
       .then((response) => response.json())
       .then((data) => setHouses(data.items))
-      .catch((error) => console.error('Error fetching data:', error));
+      .catch((error) => console.error("Error fetching data:", error));
   }, []);
-
   return (
-    <div className="gallery">
-      {houses.map((house) => (
-        <Link to={`/flat/${house.id}`} key={house.id} className="cardItem">
-          <img src={house.cover} alt={house.title} />
-          <div className="titleCard">{house.title} </div>
-        </Link>
-      ))}
+    <div>
+      <CardContainer cards={houses} />
     </div>
   );
 }

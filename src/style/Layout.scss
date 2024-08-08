@@ -1,0 +1,66 @@
+@mixin HeaderFooterFont {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+}
+
+/* HEADER */
+header {
+  @include HeaderFooterFont;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 85%;
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+    margin-right: 15px;
+  }
+  nav a {
+    text-decoration: none;
+    color: inherit;
+    margin-left: 20px;
+    &.active {
+      text-decoration: underline;
+    }
+    &:hover {
+      text-decoration-line: underline;
+    }
+  }
+  @media (max-width: 768px) {
+    .logoHeader {
+      width: 70%;
+    }
+  }
+  @media (max-width: 560px) {
+    nav {
+      margin: 0;
+      font-size: 15px;
+    }
+  }
+}
+/* FOOTER */
+footer {
+  @include HeaderFooterFont;
+  font-size: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  background-color: black;
+  height: 200px;
+  /*position: fixed;*/
+  left: 0px;
+  bottom: 0px;
+  width: 100%;
+}
+.logo_footer {
+  height: 20%;
+}

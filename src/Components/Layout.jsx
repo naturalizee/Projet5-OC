@@ -1,26 +1,29 @@
-import React from 'react';
-import logoHeader from '../Assets/Images/logo_header.png';
-import logoFooter from '../Assets/Images/logo_footer.png';
-import '../Styles/Layout.scss'
-import { NavLink } from 'react-router-dom';
+import React from "react";
+import logoHeader from "../assets/logoHeader.png";
+import logoFooter from "../assets/logoFooter.png";
+import "../style/Layout.scss";
+import { NavLink } from "react-router-dom";
 
-export function LayoutHeader() {
-    return (
-        <header>
-            <a href="/"><img className="logo_header" src={logoHeader} alt="logo_header" /></a>
-            <nav>
-                <NavLink to="/">Accueil</NavLink>
-                <NavLink to="/About">A Propos</NavLink>
-            </nav>
-        </header>
-    );
+//Affichage du Header
+export function Header() {
+  return (
+    <header>
+      <NavLink to="/">
+        <img className="logoHeader" src={logoHeader} alt="logo"></img>
+      </NavLink>
+      <nav>
+        <NavLink to="/">Accueil</NavLink>
+        <NavLink to="/about">A propos</NavLink>
+      </nav>
+    </header>
+  );
 }
-
-export function LayoutFooter() {
-    return (
-        <footer>
-            <a href="/"><img className="logo_footer" src={logoFooter} alt="logo_footer" /></a>
-            <aside>© 2020 Kasa. All rights reserved</aside>
-        </footer>
-    );
+//Affichage du Footer
+export function Footer() {
+  return (
+    <footer>
+      <img src={logoFooter} alt="logo" className="logo_footer"></img>
+      <p>@ 2020 Kasa. All rights reserved</p>
+    </footer>
+  );
 }
