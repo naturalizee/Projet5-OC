@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+// Function for rotation of chevron and displaying items collapses 
 function Collapse({ title, content }) {
   const [isVisible, setIsVisible] = useState(false);
   const handleClick = () => {

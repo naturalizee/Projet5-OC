@@ -2,6 +2,7 @@ import { Header, Footer } from "../Components/Layout";
 import { Link } from "react-router-dom";
 import "../style/ErrorPage.scss";
 
+// Error page
 export function ErrorPage() {
   return (
     <div>

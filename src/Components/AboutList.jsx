@@ -26,6 +26,7 @@ const items = [
   },
 ];
 
+// Function for About List
 export function AboutList() {
   return (
     <div className="collapse">

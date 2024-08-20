@@ -9,22 +9,27 @@
   width: 85%;
   margin: auto;
   margin-top: 20px;
+
   @media (max-width: 768px) {
     box-sizing: content-box;
   }
-  @media (max-width: 500px) {
-  }
+
+  @media (max-width: 500px) {}
+
   .firstSection {
     display: flex;
     justify-content: space-between;
+
     @media (max-width: 768px) {
       display: block;
       justify-content: flex-start;
     }
+
     .titleAndLocation {
       .title {
         color: #ff6060;
       }
+
       .tags {
         display: flex;
         align-items: center;
@@ -32,6 +37,7 @@
         flex-wrap: wrap;
         gap: 10px;
         margin-top: 10px;
+
         .tag {
           background-color: #ff6060;
           color: white;
@@ -41,8 +47,10 @@
       }
     }
   }
+
   .hostAndRating {
     width: 150px;
+
     @media (max-width: 768px) {
       display: flex;
       flex-direction: row-reverse;
@@ -51,44 +59,53 @@
       width: 60%;
       margin-top: 20px;
     }
+
     .ratingStar {
       display: flex;
       gap: 5px;
       margin-top: 10px;
+
       .fa-solid.fa-star {
         color: #ff6060;
       }
+
       .fa-regular.fa-star {
         color: #e3e3e3;
       }
     }
   }
+
   .host {
     display: flex;
     color: #ff6060;
     gap: 30px;
     width: 10px;
+
     .hostPic {
       border-radius: 50%;
       width: 64px;
       height: 64px;
     }
   }
+
   .collapse {
     width: 100%;
     margin: auto;
     gap: 50px;
     display: grid;
     grid-template-columns: 1fr 1fr;
+
     @media (max-width: 768px) {
       display: block;
     }
+
     .collapse-item {
       .collapseTitle {
         width: 100%;
         margin-left: 0;
         @include AboutText;
       }
+
       .chevron {
         cursor: pointer;
         transition: transform 0.5s;
@@ -111,6 +128,7 @@
         height: auto;
         padding-bottom: 15px;
         margin: 0px;
+
         li {
           list-style: none;
         }
@@ -118,44 +136,3 @@
     }
   }
 }
-
-/*
-@media (max-width: 768px) {
-  .flatInformation {
-    box-sizing: content-box;
-    .firstSection {
-      display: block;
-      justify-content: flex-start;
-    }
-    .hostAndRating {
-      display: flex;
-      flex-direction: row-reverse;
-      justify-content: space-between;
-      align-items: center;
-      width: 70%;
-    }
-    .collapse {
-      display: block;
-    }
-  }
-}
-@media (max-width: 500px) {
-  .flatInformation {
-    box-sizing: content-box;
-    .firstSection {
-      display: block;
-      justify-content: flex-start;
-    }
-    .hostAndRating {
-      display: flex;
-      flex-direction: row-reverse;
-      justify-content: space-between;
-      align-items: center;
-      width: 60%;
-    }
-    .collapse {
-      display: block;
-    }
-  }
-}
-*/

@@ -4,7 +4,7 @@ import logoFooter from "../assets/logoFooter.png";
 import "../style/Layout.scss";
 import { NavLink } from "react-router-dom";
 
-//Affichage du Header
+//Header display
 export function Header() {
   return (
     <header>
@@ -18,7 +18,7 @@ export function Header() {
     </header>
   );
 }
-//Affichage du Footer
+//Footer display
 export function Footer() {
   return (
     <footer>

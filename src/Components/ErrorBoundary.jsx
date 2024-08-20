@@ -8,18 +8,18 @@ class ErrorBoundary extends Component {
   }
 
   static getDerivedStateFromError(error) {
-    // Mettre à jour l'état pour indiquer qu'une erreur s'est produite
+    // Update status to indicate that an error has occurred
     return { hasError: true };
   }
 
   componentDidCatch(error, errorInfo) {
-    // Vous pouvez aussi enregistrer l'erreur dans un service de reporting
+    // You can also log the error in a reporting service
     console.log(error, errorInfo);
   }
 
   render() {
     if (this.state.hasError) {
-      // Rediriger vers la page d'erreur
+      // Redirect to error page
       return <Navigate to="/errorpage" />;
     }
 

@@ -15,28 +15,34 @@ header {
   margin: auto;
   margin-top: 30px;
   margin-bottom: 30px;
+
   nav {
     display: flex;
     justify-content: space-between;
     align-self: center;
     margin-right: 15px;
   }
+
   nav a {
     text-decoration: none;
     color: inherit;
     margin-left: 20px;
+
     &.active {
       text-decoration: underline;
     }
+
     &:hover {
       text-decoration-line: underline;
     }
   }
+
   @media (max-width: 768px) {
     .logoHeader {
       width: 70%;
     }
   }
+
   @media (max-width: 560px) {
     nav {
       margin: 0;
@@ -44,6 +50,7 @@ header {
     }
   }
 }
+
 /* FOOTER */
 footer {
   @include HeaderFooterFont;
@@ -61,6 +68,7 @@ footer {
   bottom: 0px;
   width: 100%;
 }
+
 .logo_footer {
   height: 20%;
 }

@@ -8,8 +8,10 @@
 .collapse {
   width: 80%;
   margin: 30px auto;
+
   .collapse-item {
     @include AboutText;
+
     .collapseTitle {
       display: flex;
       align-items: center;

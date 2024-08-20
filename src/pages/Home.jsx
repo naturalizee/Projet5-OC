@@ -3,6 +3,7 @@ import { Header, Footer } from "../Components/Layout.jsx";
 import "../style/Home.scss";
 import { CardContainer } from "../Components/CardContainer.jsx";
 
+// Home page
 export function Home() {
   return (
     <div>
@@ -15,6 +16,8 @@ export function Home() {
     </div>
   );
 }
+
+//Recovery of items
 function Gallery() {
   const [houses, setHouses] = useState([]);
 
